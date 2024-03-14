@@ -1,0 +1,175 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dokumentasi OpenAPI",
+    "version": "1.0",
+    "description": "API untuk Mengelola Data Siswa",
+    "contact": {
+      "name": "Kelompok 6",
+      "url": "https://github.com/22091397033AryanggaPutraSatrya/Kelompok_6_API_MI22A"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost/api/index.php"
+    }
+  ],
+  "paths": {
+    "/calonsiswa": {
+      "get": {
+        "summary": "Menampilkan Data Siswa",
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Menambahkan Data Siswa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "type": "string"
+                  },
+                  "nilai": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["nama", "nilai"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK",
+                  "message": "Data berhasil ditambahkan."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "Error",
+                  "message": "Gagal menambahkan data: Invalid input."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calonsiswa/{id}": {
+      "put": {
+        "summary": "Memperbarui Data Siswa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "type": "string"
+                  },
+                  "nilai": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["nama", "nilai"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK",
+                  "message": "Data berhasil diperbarui."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "Error",
+                  "message": "Gagal memperbarui data: Invalid input."
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Menghapus Data Siswa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK",
+                  "message": "Data berhasil dihapus."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "Error",
+                  "message": "Gagal menghapus data: Invalid input."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
