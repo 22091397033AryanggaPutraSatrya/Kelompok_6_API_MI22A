@@ -5,4 +5,4 @@
 ![Tampilan parameter put](./assets/5.jpg).
 ![Tampilan hasil put](./assets/6.jpg).
 ![Tampilan parameter delete](./assets/7.jpg).
-![Tampilan hasil delete](.assets/8.jpg).
+![Tampilan hasil delete](./assets/8.jpg).
