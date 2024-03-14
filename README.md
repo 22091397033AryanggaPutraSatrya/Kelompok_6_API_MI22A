@@ -1,1 +1,1 @@
-assets/1.jpg
+/assets/1.jpg
